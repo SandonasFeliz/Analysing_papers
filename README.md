@@ -1,7 +1,17 @@
 [![DOI](https://zenodo.org/badge/1176906870.svg)](https://doi.org/10.5281/zenodo.18929491)
 
 
+
 # Analysing_papers
+
+- **Project name:** Analysing papers
+- **Author:** Janele Sandonas Feliz
+- **Version:** 2.0
+- **License:** MIT
+- **Keywords:** PDF analysis, TEI, wordcloud, figures, links, GROBID
+
+
+
 Este proyecto permite analizar papers en PDF, extraer abstracts, generar wordclouds, contar figuras y extraer enlaces externos.  
 
 > **Nota**: los PDFs **no están incluidos** por copyright. Debes colocarlos en `data/pdf/` para ejecutar el pipeline.
