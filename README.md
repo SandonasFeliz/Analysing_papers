@@ -27,7 +27,26 @@ README.md
 ```
 > **Nota**: Se deben crear las carpetas `data/` con las subcarpetas `pdf/` y `tei/`. También se debe crear la carpeta `results/`.
 
+## Dependencia: GROBID
+
+Este proyecto utiliza **GROBID (GeneRation Of BIbliographic Data)** para convertir PDFs académicos a formato TEI.
+
+- Repositorio GitHub: https://github.com/kermitt2/grobid
+
+### Instalación de GROBID con Docker
+
+```bash
+docker pull lfoppiano/grobid:0.7.2
+```
+Ejecutamos GROBID:
+
+```bash
+docker run -t --rm -p 8070:8070 lfoppiano/grobid:0.7.2
+```
+Levantamos el servicio en `http://localhost:8070`.
+
 ## Uso
+Una vez que se haya ejecutado Grobid. Abrimos otra terminal y seguimos los siguientes pasos:
  Ejecutar el pipeline principal:
  ```bash
 python scripts/run_pipeline.py
@@ -75,7 +94,7 @@ Para ejecutar tu propio análisis:
 ```bash
 mkdir -p data/pdf data/tei results
 ```
-2. Colocar tus PDFs en data/pdf/
+2. Colocar tus PDFs en `data/pdf/`.
 3. Ejecutar el pipeline principal:
    
 ```bash
@@ -88,4 +107,5 @@ python scripts/run_pipeline.py
 python -m unittest discover test
 ```
 
+Loppi, LF. et al. "GROBID: GeneRation Of BIbliographic Data". https://github.com/kermitt2/grobid
 
