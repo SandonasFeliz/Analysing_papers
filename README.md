@@ -109,6 +109,8 @@ python scripts/run_pipeline.py
 ```bash
 python -m unittest discover test
 ```
+## Citation
+Si usas este poryecto, por favor cita:
 
 Loppi, LF. et al. "GROBID: GeneRation Of BIbliographic Data". https://github.com/kermitt2/grobid
 
