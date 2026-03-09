@@ -25,7 +25,16 @@ jobs:
           mkdir -p data/pdf data/tei results
 
       - name: Run main pipeline
-        run: conda run python scripts/run_pipeline.py
+        shell: bash -l {0}
+        run: |
+          conda activate grobid_env
+          python scripts/run_pipeline.py
 
       - name: Run tests
-        run: conda run python -m unittest discover test
+        shell: bash -l {0}
+        run: | 
+            conda activate grobid-env
+            python -m unittest discover test
+
+
+        
