@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/1176906870.svg)](https://doi.org/10.5281/zenodo.18929491)
+
 # Analysing_papers
 Este proyecto permite analizar papers en PDF, extraer abstracts, generar wordclouds, contar figuras y extraer enlaces externos.  
 
