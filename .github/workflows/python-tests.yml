@@ -25,7 +25,7 @@ jobs:
           mkdir -p data/pdf data/tei results
 
       - name: Run main pipeline
-        run: python scripts/run_pipeline.py
+        run: conda run python scripts/run_pipeline.py
 
       - name: Run tests
-        run: python -m unittest discover test
+        run: conda run python -m unittest discover test
