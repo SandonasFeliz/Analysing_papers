@@ -1,0 +1,45 @@
+name: Text Extraction Analysis CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  run_pipeline:
+    runs-on: ubuntu-latest
+
+    steps:
+      #  Clonar el repositorio
+      - uses: actions/checkout@v3
+
+      #  Configurar Python
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      # Instalar dependencias
+      - name: Install dependencies
+        run: |
+          echo "No requirements.txt, asegúrate de tener environment.yml localmente"
+
+      #  Crear carpetas necesarias
+      - name: Create folders
+        run: |
+          mkdir -p data/pdf
+          mkdir -p data/tei
+          mkdir -p results
+
+      #  Ejecutar pipeline principal
+      - name: Run main pipeline
+        run: |
+          python scripts/run_pipeline.py
+
+      #  Ejecutar tests
+      - name: Run tests
+        run: |
+          python -m unittest discover -s test
+
+      
