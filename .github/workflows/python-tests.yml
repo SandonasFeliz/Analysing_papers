@@ -1,0 +1,33 @@
+name: Text Extraction Analysis CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  run_pipeline:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          pip install -r environment.yml
+
+      - name: Create folders
+        run: |
+          mkdir -p data/pdf data/tei results
+
+      - name: Run main pipeline
+        run: python scripts/run_pipeline.py
+
+      - name: Run tests
+        run: python -m unittest discover test
