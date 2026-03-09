@@ -12,6 +12,9 @@ pdf_folder = "data/pdf"
 tei_folder = "data/tei"
 results_folder = "results"
 
+if not os.path.exists(pdf_folder) or not os.listdir(pdf_folder):
+    print("No se encontraron PDFs en 'data/pdf'. Saltando pipeline.")
+    exit()
 os.makedirs(results_folder, exist_ok=True)
 
 
