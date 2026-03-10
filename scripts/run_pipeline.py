@@ -7,6 +7,26 @@ from figures_count import count_figures, save_figures_plot
 from extract_links import filter_external_links, save_links
 
 
+def wait_for_grobid(grobid_url, retries=30, delay=3):
+    # usa el endpoint /isalive para comprobar si GROBID está listo
+    base_url = grobid_url.split("/api")[0]
+    health_url = f"{base_url}/api/isalive"
+    
+    print("Esperando a que GROBID esté disponible...")
+
+    for _ in range(retries):
+        try:
+            r = requests.get(health_url)
+            if r.status_code == 200:
+                print("GROBID listo.")
+                return
+        except:
+            pass
+        print(f"GROBID aún no está listo... esperando {delay}s")
+        time.sleep(delay)
+
+    raise RuntimeError("GROBID no está disponible")
+
 # Carpetas del proyecto
 pdf_folder = "data/pdf"
 tei_folder = "data/tei"
@@ -16,6 +36,15 @@ if not os.path.exists(pdf_folder) or not os.listdir(pdf_folder):
     print("No se encontraron PDFs en 'data/pdf'. Saltando pipeline.")
     exit()
 os.makedirs(results_folder, exist_ok=True)
+
+
+# --- URL de GROBID ---
+grobid_url = os.environ.get(
+    "GROBID_URL", "http://grobid:8070/api/processFulltextDocument"
+)
+
+# --- Esperar a que GROBID esté listo ---
+wait_for_grobid(grobid_url)
 
 
 # 1️Convertir PDFs → TEI
