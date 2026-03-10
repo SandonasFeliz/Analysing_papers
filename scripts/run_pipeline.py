@@ -1,5 +1,7 @@
 import os
 import glob
+import time
+import requests
 
 from pdf_to_tei import convert_pdfs_to_tei
 from create_wordcloud import extract_abstract_texts, generate_wordcloud
