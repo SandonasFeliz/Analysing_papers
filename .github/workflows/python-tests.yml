@@ -33,7 +33,7 @@ jobs:
       - name: Run tests
         shell: bash -l {0}
         run: | 
-            conda activate tan_env
+            conda activate ta_env
             python -m unittest discover test
 
 
