@@ -2,7 +2,7 @@ import requests
 import glob
 import os
 
-def convert_pdfs_to_tei(pdf_folder, tei_folder, grobid_url="http://localhost:8070/api/processFulltextDocument"):
+def convert_pdfs_to_tei(pdf_folder, tei_folder, grobid_url=None):
     """
     Convierte archivos PDF en archivos TEI XML utilizando el servicio GROBID.
 
@@ -15,7 +15,11 @@ def convert_pdfs_to_tei(pdf_folder, tei_folder, grobid_url="http://localhost:807
     grobid_url : str
         URL del servicio GROBID.
     """
-
+    if grobid_url is None:
+        grobid_url = os.environ.get(
+            "GROBID_URL",
+            "http://localhost:8070/api/processFulltextDocument"
+        )
     os.makedirs(tei_folder, exist_ok=True)
 
     pdf_files = glob.glob(os.path.join(pdf_folder, "*.pdf"))
