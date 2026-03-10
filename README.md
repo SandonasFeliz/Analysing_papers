@@ -130,6 +130,20 @@ python scripts/run_pipeline.py
 ```bash
 python -m unittest discover tests
 ```
+
+## Uso con Docker
+Realizamos los siguientes pasos desde la raíz del proyecto:
+```bash
+docker-compose build --no-cache
+docker-compose up
+```
+Con eso, ya tenemos nuestra imagen de Grobid instalada y el entorno creado con Conda.
+A su vez, podremos ver como se ejecuta el programa principal: `python scripts/run_pipeline.py`.
+Para parar, solamente debe escribir:
+```bash
+docker-compose down
+```
+
 ## Citation
 Si usas este proyecto, por favor cita:
 
