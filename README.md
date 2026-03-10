@@ -23,7 +23,7 @@ Este proyecto permite analizar papers en PDF, extraer abstracts, generar wordclo
 
 ```bash
 conda env create -f environment.yml
-conda activate grobid-env
+conda activate ta_env
 ```
 
 ## Estructura
@@ -75,7 +75,7 @@ Genera:
 Ejecutar tests con archivos de ejemplo:
 
 ```bash
-python -m unittest discover test
+python -m unittest discover tests
 ```
 > **Nota**: Hay test que requieren poner un pdf en `test/data/`.
 > El test que verifica el funcionamiento de wordcloud genera una imagen en `test/`.
@@ -117,7 +117,7 @@ python scripts/run_pipeline.py
 4. Ejecutar tests opcionalmente:
 
 ```bash
-python -m unittest discover test
+python -m unittest discover tests
 ```
 ## Citation
 Si usas este proyecto, por favor cita:
