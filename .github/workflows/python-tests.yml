@@ -34,7 +34,7 @@ jobs:
         shell: bash -l {0}
         run: | 
             conda activate ta_env
-            python -m unittest discover test
+            python -m unittest discover tests
 
 
         
