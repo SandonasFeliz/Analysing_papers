@@ -1,0 +1,21 @@
+version: "3.8"
+
+services:
+  grobid:
+    image: lfoppiano/grobid:0.7.2
+    container_name: grobid
+    ports:
+      - "8070:8070"
+    environment:
+      - JAVA_OPTS=-Xmx4G
+
+  analysing_papers:
+    build: .
+    container_name: analysing_papers
+    depends_on:
+      - grobid
+    environment:
+      - GROBID_URL=http://grobid:8070/api/processFulltextDocument
+    volumes:
+      - .:/app
+    command: ["python", "scripts/run_pipeline.py"]
