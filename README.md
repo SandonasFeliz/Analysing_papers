@@ -60,6 +60,18 @@ Levantamos el servicio en `http://localhost:8070`.
 
 ## Uso
 Una vez que se haya ejecutado Grobid. Abrimos otra terminal y seguimos los siguientes pasos:
+
+Definir variable de entorno para que el script se conecte a GROBID:
+
+- Linux/macOS
+  ```bash
+  export GROBID_URL=http://localhost:8070/api/processFulltextDocument
+  ```
+- Windows CMD
+  ```bash
+  set GROBID_URL=http://localhost:8070/api/processFulltextDocument
+  ```
+  
  Ejecutar el pipeline principal:
  ```bash
 python scripts/run_pipeline.py
