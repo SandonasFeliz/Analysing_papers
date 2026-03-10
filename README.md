@@ -120,7 +120,7 @@ python scripts/run_pipeline.py
 python -m unittest discover test
 ```
 ## Citation
-Si usas este poryecto, por favor cita:
+Si usas este proyecto, por favor cita:
 
 Loppi, LF. et al. "GROBID: GeneRation Of BIbliographic Data". https://github.com/kermitt2/grobid
 
