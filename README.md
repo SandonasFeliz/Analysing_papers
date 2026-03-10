@@ -77,8 +77,7 @@ Ejecutar tests con archivos de ejemplo:
 ```bash
 python -m unittest discover tests
 ```
-> **Nota**: Hay test que requieren poner un pdf en `test/data/`.
-> El test que verifica el funcionamiento de wordcloud genera una imagen en `test/`.
+> **Nota**: El test que verifica el funcionamiento de wordcloud `test_wordcloud.py` genera una imagen en `test/`.
 
 ## Integración Continua
 El workflow ejecuta:
