@@ -145,7 +145,9 @@ docker-compose down
 ```
 
 ## Citation
+
+
 Si usas este proyecto, por favor cita:
 
-Loppi, LF. et al. "GROBID: GeneRation Of BIbliographic Data". https://github.com/kermitt2/grobid
+GROBID: GeneRation Of BIbliographic Data. https://github.com/grobidOrg/grobid
 
