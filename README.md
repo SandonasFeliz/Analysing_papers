@@ -32,6 +32,7 @@ environment.yml
 README.md
 mkdocs.yml
 readthedocs.yaml
+requirements.txt
 ```
 > **Nota**: Se deben crear las carpetas `data/` con las subcarpetas `pdf/` y `tei/`. También se debe crear la carpeta `results/`.
 
