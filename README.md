@@ -18,29 +18,10 @@ Este proyecto permite analizar papers en PDF, extraer abstracts, generar wordclo
 
 > **Nota**: los PDFs **no están incluidos** por copyright. Debes colocarlos en `data/pdf/` para ejecutar el pipeline.
 
-
-## Instalación
-1. Clonación de repositorio
-Primero, clonamos el repositorio. 
-
-```bash
-git clone https://github.com/SandonasFeliz/Analysing_papers.git
-```
-
-2. Crear el entorno Conda desde `environment.yml`:
-
-```bash
-conda env create -f environment.yml
-conda activate ta_env
-```
-3. Instalción de GROBID
-   Como se explicó antes, para instalar Grobid, hacemos:
-```bash
-docker pull lfoppiano/grobid:0.7.2
-```
 ## Estructura
 
 ```
+docs/
 data/
     pdf/     ← Coloca tus PDFs aquí
     tei/     ← Se generará automáticamente
@@ -49,8 +30,19 @@ scripts/     ← Código principal
 test/        ← Tests de ejemplo
 environment.yml
 README.md
+mkdocs.yml
+readthedocs.yaml
 ```
 > **Nota**: Se deben crear las carpetas `data/` con las subcarpetas `pdf/` y `tei/`. También se debe crear la carpeta `results/`.
+
+### Preparar el entorno para usuarios
+
+Para ejecutar tu propio análisis:
+1. Crear carpetas locales necesarias:
+```bash
+mkdir -p data/pdf data/tei results
+```
+2. Colocar tus PDFs en `data/pdf/`.
 
 ## Dependencia: GROBID
 
@@ -70,6 +62,36 @@ docker run -t --rm -p 8070:8070 lfoppiano/grobid:0.7.2
 ```
 Levantamos el servicio en `http://localhost:8070`.
 
+## Instalación
+1. Clonación de repositorio
+Primero, clonamos el repositorio. 
+
+```bash
+git clone https://github.com/SandonasFeliz/Analysing_papers.git
+```
+
+2. Crear el entorno Conda desde `environment.yml`:
+
+```bash
+conda env create -f environment.yml
+conda activate ta_env
+```
+### Dependencias
+
+- Python 3.11
+- lxml
+- numpy
+- matplotlib
+- wordcloud
+- requests
+- Otros paquetes especificados en environment.yml
+
+3. Instalción de GROBID
+   Como se explicó antes, para instalar Grobid, hacemos:
+```bash
+docker pull lfoppiano/grobid:0.7.2
+```
+
 ## Uso
 Una vez que se haya ejecutado Grobid. Abrimos otra terminal y seguimos los siguientes pasos:
 
@@ -85,7 +107,7 @@ Definir variable de entorno para que el script se conecte a GROBID:
   ```
   
  Ejecutar el pipeline principal:
- ```bash
+```bash
 python scripts/run_pipeline.py
 ```
 El pipeline se saltará automáticamente los pasos si no hay PDFs en data/pdf.
@@ -96,7 +118,9 @@ Genera:
 - Gráfico de conteo de figuras en results/
 - Extracción de links en results/
 
-Ejecutar tests con archivos de ejemplo:
+
+## Tests
+Ejecutar tests en la raíz del proyecto:
 
 ```bash
 python -m unittest discover tests
@@ -111,38 +135,7 @@ El workflow ejecuta:
 3. Ejecución del pipeline (si hay PDFs)
 4. Ejecución de tests automáticos
 
-> **Nota**: No requiere subir PDFs ni carpetas vacías para funcionar.
-
-## Dependencias
-
-- Python 3.11
-- lxml
-- numpy
-- matplotlib
-- wordcloud
-- requests
-- Otros paquetes especificados en environment.yml
-
-## Preparar el entorno para usuarios
-
-Para ejecutar tu propio análisis:
-1. Crear carpetas locales necesarias:
-```bash
-mkdir -p data/pdf data/tei results
-```
-2. Colocar tus PDFs en `data/pdf/`.
-3. Ejecutar el pipeline principal:
    
-```bash
-python scripts/run_pipeline.py
-```
-
-4. Ejecutar tests opcionalmente:
-
-```bash
-python -m unittest discover tests
-```
-
 ## Uso con Docker
 Realizamos los siguientes pasos desde la raíz del proyecto:
 ```bash
@@ -157,7 +150,6 @@ docker-compose down
 ```
 
 ## Citation
-
 
 Si usas este proyecto, por favor cita:
 
