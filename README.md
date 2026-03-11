@@ -123,7 +123,7 @@ Genera:
 ### Uso con Docker
 
 > Nota
-> Si ha ejecutado el programa sin docker y desea ejecutarlo con docker, por favor hagalo en otra terminal. Puede haber fallos si lo hace en la misms terminal.
+> Si ha ejecutado el programa sin docker y desea ejecutarlo con docker, por favor hágalo en otra terminal. Puede haber fallos si lo hace en la misms terminal.
 
 
 Realizamos los siguientes pasos desde la raíz del proyecto:
