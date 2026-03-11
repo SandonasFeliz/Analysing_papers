@@ -94,6 +94,7 @@ docker pull lfoppiano/grobid:0.7.2
 ```
 
 ## Uso
+### Uso sin docker
 Una vez que se haya ejecutado Grobid. Abrimos otra terminal y seguimos los siguientes pasos:
 
 Definir variable de entorno para que el script se conecte a GROBID:
@@ -119,6 +120,24 @@ Genera:
 - Gráfico de conteo de figuras en results/
 - Extracción de links en results/
 
+### Uso con Docker
+
+> Nota
+> Si ha ejecutado el programa sin docker y desea ejecutarlo con docker, por favor hagalo en otra terminal. Puede haber fallos si lo hace en la misms terminal.
+
+
+Realizamos los siguientes pasos desde la raíz del proyecto:
+```bash
+docker-compose build --no-cache
+docker-compose up
+```
+Con eso, ya tenemos nuestra imagen de Grobid instalada y el entorno creado con Conda.
+A su vez, podremos ver como se ejecuta el programa principal: `python scripts/run_pipeline.py`. 
+Realiza lo mismo que usándolo sin docker. 
+Para parar, solamente debe escribir:
+```bash
+docker-compose down
+```
 
 ## Tests
 Ejecutar tests en la raíz del proyecto:
@@ -137,18 +156,7 @@ El workflow ejecuta:
 4. Ejecución de tests automáticos
 
    
-## Uso con Docker
-Realizamos los siguientes pasos desde la raíz del proyecto:
-```bash
-docker-compose build --no-cache
-docker-compose up
-```
-Con eso, ya tenemos nuestra imagen de Grobid instalada y el entorno creado con Conda.
-A su vez, podremos ver como se ejecuta el programa principal: `python scripts/run_pipeline.py`.
-Para parar, solamente debe escribir:
-```bash
-docker-compose down
-```
+
 
 ## Citation
 
