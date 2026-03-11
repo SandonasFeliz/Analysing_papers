@@ -9,7 +9,7 @@
 - **Version:** 2.0
 - **License:** MIT
 - **Keywords:** PDF analysis, TEI, wordcloud, figures, links, GROBID
-
+**Documentación:** [https://analysing-paper.readthedocs.io/es/latest/](https://analysing-paper.readthedocs.io/es/latest/)
 
 
 Este proyecto permite analizar papers en PDF, extraer abstracts, generar wordclouds, contar figuras y extraer enlaces externos.  
