@@ -28,7 +28,7 @@ README.md
 docs/
 mkdocs.yml
 .readthedocs.yaml
-
+requirements.txt
 ```
 
 !!! note "Crear carpetas necesarias"
@@ -50,6 +50,7 @@ Para ejecutar, hacemos:
 ```bash
 docker run -t --rm -p 8070:8070 lfoppiano/grobid:0.7.2
 ```
+
 
 
 
