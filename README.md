@@ -18,14 +18,24 @@ Este proyecto permite analizar papers en PDF, extraer abstracts, generar wordclo
 
 
 ## Instalación
+1. Clonación de repositorio
+Primero, clonamos el repositorio. 
 
-1. Crear el entorno Conda desde `environment.yml`:
+```bash
+git clone https://github.com/SandonasFeliz/Analysing_papers.git
+```
+
+2. Crear el entorno Conda desde `environment.yml`:
 
 ```bash
 conda env create -f environment.yml
 conda activate ta_env
 ```
-
+3. Instalción de GROBID
+   Como se explicó antes, para instalar Grobid, hacemos:
+```bash
+docker pull lfoppiano/grobid:0.7.2
+```
 ## Estructura
 
 ```
