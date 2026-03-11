@@ -4,7 +4,7 @@ Para ver el repisotrio de GitHub, pulse aquí: [Repositorio en GitHub](https://g
 
 - Project name: Analysing papers
 - Author: Janele Sandonas Feliz
-- Version: 2.0
+- Version: 3.0
 - License: MIT
 - Keywords: PDF analysis, TEI, wordcloud, figures, links, GROBID
 
@@ -50,6 +50,7 @@ Para ejecutar, hacemos:
 ```bash
 docker run -t --rm -p 8070:8070 lfoppiano/grobid:0.7.2
 ```
+
 
 
 
