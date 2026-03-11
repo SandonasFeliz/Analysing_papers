@@ -1,0 +1,11 @@
+site_name: Analysing Papers
+nav:
+  - Inicio: index.md
+  - Instalación: instalacion.md
+  - Uso: uso.md
+  - Tests e integración continua: test.md
+theme:
+  name: readthedocs
+
+markdown_extensions:
+  - admonition
