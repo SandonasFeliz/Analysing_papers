@@ -25,6 +25,9 @@ Dockerfile
 docker-compose.yml
 environment.yml
 README.md
+docs/
+mkdocs.yml
+.readthedocs.yaml
 
 ```
 
@@ -47,5 +50,6 @@ Para ejecutar, hacemos:
 ```bash
 docker run -t --rm -p 8070:8070 lfoppiano/grobid:0.7.2
 ```
+
 
 
