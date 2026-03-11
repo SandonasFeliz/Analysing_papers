@@ -49,7 +49,7 @@ Genera:
 ## Uso con Docker
 
 
-!!! tip "Uso con Docker"
+!!! warning "Uso con Docker"
     Si ha ejecutado el programa sin docker y ahora desea hacerlo con docker, por favor, hágalo en otra terminal. Puede haber fallos.
 
 
@@ -69,4 +69,5 @@ Para parar, solamente debe escribir:
 ```bash
 docker-compose down
 ```
+
 
