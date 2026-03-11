@@ -9,6 +9,8 @@
 - **Version:** 2.0
 - **License:** MIT
 - **Keywords:** PDF analysis, TEI, wordcloud, figures, links, GROBID
+
+
 **Documentación:** [https://analysing-paper.readthedocs.io/es/latest/](https://analysing-paper.readthedocs.io/es/latest/)
 
 
