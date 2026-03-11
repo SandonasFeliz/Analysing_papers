@@ -6,7 +6,7 @@
 
 - **Project name:** Analysing papers
 - **Author:** Janele Sandonas Feliz
-- **Version:** 2.0
+- **Version:** 3.0
 - **License:** MIT
 - **Keywords:** PDF analysis, TEI, wordcloud, figures, links, GROBID
 
